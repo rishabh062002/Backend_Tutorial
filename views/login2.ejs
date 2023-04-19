@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login </title>
+  <style>
+    /* Internal CSS design */
+    body {
+      background-color: #6b70cd;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 50px;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      cursor: pointer;
+      height: 30px;
+
+      padding: 20px;
+      margin: 20px 20px;
+      border-radius: 55px;
+      border: 2px solid #6b70cd;
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+    
+    input[type="submit"] {
+      background-color: #232bc5;
+      color: white;
+      padding: 10px 60px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #535ae2;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .error{
+      color: red;
+      font-family: cursive;
+      text-align: right;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form method="post" action="/login">
+      <label for="email">Enter Your Email</label>
+      <input type="email" name="email" placeholder="email" value="<%=locals.email%>">
+      <label for="password">Enter Your Password</label>
+      <input type="password" name="password" placeholder="password">
+      
+
+      <p class="error"><%=locals.message%>
+      </p>
+         
+         <br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+</html>
